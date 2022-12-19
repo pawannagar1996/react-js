@@ -1,36 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+// import {home} from "./pages/Home"
+import {Text} from "./pages/Home";
+import "./App.css";
 
+function App() {
+  return (<>
+    <Form/>
+    <Text/> 
 
-
-
-function App(){
-  return (
-    <div className='wrapper'>
-      <Form />
-    </div>
-  )
+   
+    </>
+  );
 }
+
 
 function Form() {
   return (
+    <>
+    <div className="wrapper">
+      <form action="" method="get" class="form">
+        
+        <div className="firstName">
+          <label htmlFor="firstName">First Name </label>
+          <input type="text" name="firstName" id="firstName" required />
+       
+          <label htmlFor="lastName">Last Name </label>
+          <input type="text" name="lastName" id="lastName" required />
+        </div>
 
-  //   <form action="" method="get" class="form">
-   
-  //     <label for="name">Enter your name: </label>
-  //     <input type="text" name="name" id="name" required>
+        <div>
+          <label htmlFor="email">Enter Your E-mail </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+
+      
+          <input type="submit" value="Subscribe!" id="submit"/>
+        
+      </form>
 
 
+    </div>
     
-  //     <label for="email">Enter your email: </label>
-  //     <input type="email" name="email" id="email" required>
-    
-  //     <input type="submit" value="Subscribe!">
- 
-
-  // </form>
-)
+    </>
+  );
 }
 
-export default App;
 
+export default App;
