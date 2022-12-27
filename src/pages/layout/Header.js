@@ -1,7 +1,7 @@
 
 
 
-export function Header3(){
+export function Header(){
 
     return(
         <header>

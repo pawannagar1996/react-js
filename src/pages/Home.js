@@ -1,23 +1,13 @@
 
-import {Header3} from "./layout/Header"
+import {Header} from "./layout/Header"
 
-  export function Text(){
+  export function Home(){
     return(
-        <header>
+    <>
 
-            <Header3/>
+            <Header/>
            
-            <div>pawan nagar</div>
-            <nav>
-                <ul>
-                    <li>home</li>
-                    <li>about us</li>
-                    <li>services</li>
-                    <li>contact us</li>
-                </ul>
-            </nav>
-           
-        </header>
+            </>
      
     )
   }
