@@ -1,31 +1,13 @@
-
-import {Home} from "./pages/Home";
-import Form from "./components/Form"
-
-import "./App.css";
-import ButtonComponent from "./components/EventTarget";
+import ControlForm from "./components/EventControlUncontrol"
+import List from "./components/ListPropogation";
 
 function App() {
-
-  function handleEvent(event) {
-    console.log(event)
-   }
-  function handleChildClick(event) {
-    console.log(event)
-   }
-
-  return (<>
-    {/* <Form/> */}
-    {/* <Home/>  */}
-
-    <ButtonComponent onEvent={handleEvent} onChildClick={handleChildClick}/>
-
-   
-    </>
+  return (
+    <div>
+      <List />
+      {/* <ControlForm /> */}
+    </div>
   );
 }
-
-
-
 
 export default App;

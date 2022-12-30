@@ -5,6 +5,7 @@ export default function Form() {
     return (
       <>
       <div className="wrapper">
+        
         <form action="" method="get" class="form">
           
           <div className="firstName">
