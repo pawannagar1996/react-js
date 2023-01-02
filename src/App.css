@@ -172,3 +172,29 @@ margin-top: 30px;
   margin-bottom: 20px;
 }
 
+
+.normal{
+  background-color: white;
+  padding: 20px 30px;
+  margin-right: 10px;
+  
+
+}
+.primary{
+  background-color: rgb(54, 54, 113);
+  padding: 20px 30px;
+  margin-right: 10px;
+  color: #fff;
+}
+.danger{
+  background-color: red;
+  padding: 20px 30px;
+  margin-right: 10px;
+  color: #fff;
+}
+.buttonStyle{
+  margin-top: 20px;
+  display: flex;
+justify-content: end;
+}
+

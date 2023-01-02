@@ -1,4 +1,5 @@
 import "../../App.css";
+import StyleButton from "../StyleButton";
 
 export default function ListLayout(props) {
   const { imgURL, heading, discription, altName } = props;
@@ -10,6 +11,11 @@ export default function ListLayout(props) {
       <div className="list-design-text">
         <h2>{heading}</h2>
         <p>{discription}</p>
+        <div className="buttonStyle">
+      <StyleButton type="normal" label="white"/>
+      <StyleButton type="primary" label="blue"/>
+      <StyleButton type="danger" label="red"/>
+      </div>
       </div>
     </li>
   );
