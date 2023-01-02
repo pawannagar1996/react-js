@@ -4,12 +4,12 @@
 
 .wrapper{
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: aquamarine;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 form{
@@ -142,4 +142,30 @@ margin-right: 10p;
 margin-top: 30px;
 }
 
+
+
+
+.list-design{display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 50px;
+
+ 
+  padding: 50px;
+  border: 2px solid #fff;
+  list-style: none;
+  background-color: antiquewhite;
+}
+
+.list-design-img{
+  margin-right: 1%;
+  width:30%;
+}
+
+.list-design-text{
+  width: 70%;
+}
+.list-design-text h2{
+  margin-bottom: 20px;
+}
 

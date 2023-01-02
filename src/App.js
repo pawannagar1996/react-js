@@ -1,11 +1,13 @@
-import ControlForm from "./components/EventControlUncontrol"
-import List from "./components/ListPropogation";
+import ListDetails from "./components/MapReactPractice/ListDetailsComponents";
+import "./App.css"
+
+
 
 function App() {
   return (
-    <div>
-      <List />
-      {/* <ControlForm /> */}
+    <div className="wrapper">
+      <ListDetails/>
+    
     </div>
   );
 }
