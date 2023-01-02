@@ -161,6 +161,9 @@ margin-top: 30px;
   margin-right: 1%;
   width:30%;
 }
+.list-design-img img{
+  width: 100%;
+}
 
 .list-design-text{
   width: 70%;
