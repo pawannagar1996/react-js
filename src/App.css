@@ -173,23 +173,24 @@ margin-top: 30px;
 }
 
 
-.normal{
+.normal-btn{
   background-color: white;
   padding: 20px 30px;
   margin-right: 10px;
   
 
 }
-.primary{
-  background-color: rgb(54, 54, 113);
+.btn{
   padding: 20px 30px;
   margin-right: 10px;
+
+}
+.primary-btn{
+  background-color: rgb(54, 54, 113);
   color: #fff;
 }
-.danger{
+.danger-btn{
   background-color: red;
-  padding: 20px 30px;
-  margin-right: 10px;
   color: #fff;
 }
 .buttonStyle{

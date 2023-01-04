@@ -12,7 +12,7 @@ export default function ListLayout(props) {
         <h2>{heading}</h2>
         <p>{discription}</p>
         <div className="buttonStyle">
-      <StyleButton type="normal" label="white"/>
+      <StyleButton type="normal" icon="99" label="white"/>
       <StyleButton type="primary" label="blue"/>
       <StyleButton type="danger" label="red"/>
       </div>
