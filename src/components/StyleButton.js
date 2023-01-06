@@ -14,15 +14,13 @@ function getClasses(){
         classes += " normal-btn";
       } else if(type === "danger") {
         classes += " danger-btn"
-      } else {
-        classes = "";
-      }
+      } 
       return classes;
     }
 
     return(
         <button className={getClasses()}>
-            {icon && <span>{icon}</span>}
+            {icon && <span className="icon-p">{icon}</span>}
             {label}</button>
     )
 }
