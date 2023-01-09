@@ -1,6 +1,6 @@
 import "../../App.css";
 
-import ListLayout from "./ListLayout";
+import ListLayout from "./listLayout";
 
 const staticList = [
   {

@@ -1,18 +1,16 @@
-import ListDetails from "./components/MapReactPractice/ListDetailsComponents";
-import "./App.css"
 
+import TodoAdd from "./components/todoList/todoAdd";
+import TodoListDetails from "./components/todoList/todoDetails";
+import "./styleCss/todoList.css"
 
 
 
 function App() {
   return (
-    <div className="wrapper">
-      <ListDetails/>
-      {/* <StyleButton type="primary" label="blue"/>
-      <StyleButton type="danger" label="red"/>
-      <StyleButton type="normal" label="white"/> */}
-    
-    </div>
+  <div>
+   <TodoAdd/>
+  <TodoListDetails/>
+  </div>
   );
 }
 

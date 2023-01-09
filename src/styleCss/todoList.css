@@ -1,0 +1,87 @@
+*{margin: 0;padding: 0;box-sizing: border-box;font-size: 20px;}
+
+ul{
+    background-color: aqua;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 50px;
+   
+  
+    
+}
+ul a {width: 100%;
+    max-width: 1200px;
+    text-decoration: none;
+    background-color: black;
+  margin-bottom: 20px;
+
+}
+
+ul li{
+list-style-type:none;
+    
+    background-color:blanchedalmond;
+    padding: 20px;  
+    display: flex;
+   
+
+}
+ul li .s-no{
+    width: 10%; background-color: blueviolet;display: inline-block;
+    padding: 10px;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+ul li .todo{
+    width: 90%;background-color: aquamarine;display: inline-block;
+    padding: 10px;
+}
+
+ul section{
+
+
+    display: flex;
+    justify-content:flex-end;
+}
+.btn{  padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 20px;
+
+}
+.edit{
+    background-color: white;
+   
+  
+}
+.done{
+    background-color:green;
+}
+.delete{
+    background-color:red;
+}
+
+.AddButton{
+    padding-top: 50px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+.AddButton input{
+background-color:#fafafa;
+border:0px;
+margin-right: 20px;
+    
+}
+.AddButton button{
+background-color:#fafafa;
+border:0px;
+padding: 10px 20px;
+cursor: pointer;
+    
+}

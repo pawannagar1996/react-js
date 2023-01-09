@@ -1,6 +1,6 @@
 import "../../App.css";
 import { AiFillAmazonCircle } from "react-icons/ai";
-import StyleButton from "../StyleButton";
+import StyleButton from "../styleButton";
 
 export default function ListLayout(props) {
   const { imgURL, heading, discription, altName } = props;

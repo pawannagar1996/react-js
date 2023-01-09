@@ -14,6 +14,8 @@ function ControlForm() {
     <div>
       <input type="text" value={CurrentValue} onChange={handleValue} />
       <input type="submit" />
+
+  
     </div>
   );
 }
