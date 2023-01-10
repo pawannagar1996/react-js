@@ -64,6 +64,11 @@ export default function TodoListUncntl() {
         <li>
           <span className="serial-number">{serialNumber}</span>
           <span className="text">{text}</span>
+          <div className="button-section">
+            <button className="btn edit">Edit</button>
+            <button className="btn pending">Pending</button>
+            <button className="btn delete">delete</button>
+          </div>
         </li>
       </div>
     );
@@ -81,7 +86,7 @@ export default function TodoListUncntl() {
       <ol>
         <div>
           <li>
-            <span className="serial-number">Serial Number</span>
+            <span className="serial-number">S. No.</span>
             <span className="text">Todo List</span>
           </li>
         </div>
