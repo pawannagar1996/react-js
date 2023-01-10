@@ -1,15 +1,10 @@
-
-import TodoAdd from "./components/todoList/todoAdd";
-import TodoListDetails from "./components/todoList/todoDetails";
-import "./styleCss/todoList.css"
-
-
+import TodoListUncntl from "./components/todoList2/todolistUncontrll";
 
 function App() {
   return (
   <div>
-   <TodoAdd/>
-  <TodoListDetails/>
+    {/* <ComponentTodoList/> */}
+    <TodoListUncntl/>
   </div>
   );
 }
