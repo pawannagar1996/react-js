@@ -62,10 +62,17 @@ ol li{background-color: blueviolet;
     margin-top: 50px;
     
 }
-.done-li{background-color: rgb(233, 42, 125);
+.done-li{background-color: rgb(205, 112, 41);
     list-style-type: none;
     padding: 50px;
     margin-top: 50px;
+}
+button:disabled,
+button[disabled],button:disabled:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor:not-allowed;
 }
 .serial-number{
     width:15%; display: inline-block;

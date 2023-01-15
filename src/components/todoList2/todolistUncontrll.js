@@ -5,16 +5,16 @@ export default function TodoListUncntl() {
   const currentRef = useRef();
   const [currentValue, updateValue] = useState([]);
   const [oldSerialNumber, updateSerialNumber] = useState(1);
-  const [oldStatus,newStatus] = useState("pending")
+  // const [oldStatus,newStatus] = useState("pending")
 
 
   function handleAddTodo() {
     const newText = currentRef.current.value;
     let todos ={
-      id: Date.now(),
+      id: ""+Date.now(),
       text: newText,
       serialNumber: oldSerialNumber,
-      status:oldStatus
+      status:"active",
     };
   ;
     const newTodos = JSON.parse(JSON.stringify(currentValue));
@@ -25,8 +25,27 @@ export default function TodoListUncntl() {
   }
 
   function changeLi(event){
-    newStatus(event.target.value="done");
+    let id = event.target.id;
+    id = id.split('--')[1];
+    console.log(id)
+    const index = currentValue.findIndex((todo) => id === todo.id);
+    const todo = {...currentValue[index], status:'done'}
+    const newTodos = [...currentValue];
+    newTodos[index] = todo;
+    updateValue(newTodos);
 
+  }
+  function getTodoStatusClass(status){
+
+    if (status === "active"){
+return "pending-li"
+    }
+   else if (status === "done"){
+return "done-li"
+    }
+    else{
+      return ""
+    }
   }
 
 
@@ -35,14 +54,15 @@ export default function TodoListUncntl() {
     
     return (
       <div key={id}>
-        <li className={oldStatus=="done"?"done-li":"pending-li"}>
+        <li className={getTodoStatusClass(status)}>
           <span className="serial-number">{serialNumber}</span>
           <span className="text">{text}</span>
-          <span className="pending-section">{oldStatus}</span>
+       
           <div className="button-section">
             <button className="btn edit">Edit</button>
-            <button className="btn pending"  onClick={changeLi}>{oldStatus}</button>
-            <button className="btn delete">delete</button>
+            <button className="btn pending" id={'btn-done--'+id}
+                  disabled={status === 'done'} onClick={changeLi}>{status}</button>
+            <button className="btn delete" >delete</button>
           </div>
         </li>
       </div>
