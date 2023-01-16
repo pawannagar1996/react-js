@@ -45,6 +45,7 @@ flex-direction: column;
     color: blue;
     background-color:white;
 }
+
 ol {width: 100%;
     max-width: 980px;
     background-color: aquamarine;
@@ -67,13 +68,7 @@ ol li{background-color: blueviolet;
     padding: 50px;
     margin-top: 50px;
 }
-button:disabled,
-button[disabled],button:disabled:hover{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-  cursor:not-allowed;
-}
+
 .serial-number{
     width:15%; display: inline-block;
     padding:20px;
@@ -137,4 +132,15 @@ margin-top: 20px;
 .delete:hover{
     background-color:blue;
     color:red;
+}
+
+
+
+
+button:disabled,
+button[disabled],button:disabled:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor:not-allowed;
 }
