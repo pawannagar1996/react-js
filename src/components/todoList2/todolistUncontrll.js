@@ -3,7 +3,7 @@ import "./todolistUncontroll.css";
 
 export default function TodoListUncntl() {
   const currentRef = useRef();
-  const disableBtn = useRef(false);
+  const disableBtn = useRef();
   const [currentValue, updateValue] = useState([]);
   const [oldSerialNumber, updateSerialNumber] = useState(1);
   // const [oldStatus,newStatus] = useState("pending")
@@ -15,19 +15,20 @@ export default function TodoListUncntl() {
       text: newText,
       serialNumber: oldSerialNumber,
       status: "active",
+      editing: false,
     };
     const newTodos = JSON.parse(JSON.stringify(currentValue));
     newTodos.push(todos);
     updateValue(newTodos);
     currentRef.current.value = "";
-    disableBtn.current.disabled=true;
+    disableBtn.current.disabled = true;
     updateSerialNumber(oldSerialNumber + 1);
   }
 
   function changeLi(event) {
     let id = event.target.id;
     id = id.split("--")[1];
-    console.log(id);
+    // console.log(id);
     const index = currentValue.findIndex((todo) => id === todo.id);
     const todo = { ...currentValue[index], status: "done" };
     const newTodos = [...currentValue];
@@ -45,7 +46,7 @@ export default function TodoListUncntl() {
   }
 
   function renderList(items) {
-    const { id, text, serialNumber, status } = items;
+    const { id, text, serialNumber, status, editing } = items;
 
     return (
       <div key={id}>
@@ -54,7 +55,14 @@ export default function TodoListUncntl() {
           <span className="text">{text}</span>
 
           <div className="button-section">
-            <button className="btn edit">Edit</button>
+            <button
+              className="btn edit"
+              disabled={status === "done"}
+              id={"btn-edit--" + id}
+              onClick={handleEdit}
+            >
+              {editing ? "done edit" : "edit"}
+            </button>
             <button
               className="btn pending"
               id={"btn-done--" + id}
@@ -75,11 +83,30 @@ export default function TodoListUncntl() {
     console.log("target value" + inputDisable);
     if (inputDisable.trim().length > 0) {
       disableBtn.current.disabled = false;
-      console.log("button disable false")
+      console.log("button disable false");
     } else {
       disableBtn.current.disabled = true;
-      console.log("button disable true")
+      console.log("button disable true");
     }
+  }
+
+  function handleEdit(event) {
+    let id = event.target.id;
+    id = id.split("--")[1];
+    const index = currentValue.findIndex((todo) => id === todo.id);
+
+    const todo = { ...currentValue[index] };
+    if (todo.editing) {
+      const inputTodoEle = document.getElementById("input-todo--" + id);
+
+      todo.text = inputTodoEle.value;
+    }
+
+    todo.editing = !todo.editing;
+
+    const newTodos = [...currentValue];
+    newTodos[index] = todo;
+    updateValue(newTodos);
   }
 
   return (
@@ -94,7 +121,7 @@ export default function TodoListUncntl() {
           ref={currentRef}
           onChange={handleInputTextChange}
         />
-        <button onClick={handleAddTodo} ref={disableBtn} >
+        <button onClick={handleAddTodo} ref={disableBtn}>
           Add
         </button>
       </div>
