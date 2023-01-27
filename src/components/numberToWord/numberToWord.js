@@ -42,9 +42,10 @@ function NumberToWord(event) {
       "ninety",
     ];
 
-    let inputWord = currentRef.current.value;
+    let inputWord =parseInt(currentRef.current.value);
     let numberToWordSave = "";
 
+   
     //100,200,300,400,500,600,700,800,900
     if (inputWord > 99 && inputWord < 1000) {
       const hundredPlaceValue = parseInt(inputWord / 100);
@@ -65,7 +66,7 @@ function NumberToWord(event) {
       inputWord -= tenPlaceValue * 10;
     }
     //10,20,30,40,50,60,70,80,90
-    if (inputWord <= 99 && inputWord % 10 == 0) {
+  if (inputWord <= 99 && inputWord %10 == 0) {
       let index = inputWord / 10;
       numberToWordSave += tensMap[index - 1];
     }
@@ -76,13 +77,17 @@ function NumberToWord(event) {
       numberToWordSave += " " + OnceMap[index];
       console.log("1to 19" + numberToWordSave);
     }
-    if (inputWord == 0) {
+   if (inputWord == 0 && numberToWordSave.length==0) {
       numberToWordSave = "Zero";
     }
+  
+    
     console.log("last word" + numberToWordSave);
     newWord(numberToWordSave);
     currentRef.current.value = "";
     disableBtn.current.disabled = true;
+    
+      
    
 
     return numberToWordSave;
@@ -95,7 +100,9 @@ function NumberToWord(event) {
     if (inputDisable.trim().length > 0) {
       disableBtn.current.disabled = false;
       console.log("button disable false");
-    } else {
+    }
+ 
+   else {
       disableBtn.current.disabled = true;
       console.log("button disable true hoja");
     }
@@ -114,7 +121,7 @@ function NumberToWord(event) {
       <button onClick={handleChangeNumber} ref={disableBtn}>
         convert to word
       </button>
-      <div className="change-word-here" >{word}</div>
+     {word && <div className="change-word-here" >{word}</div>}
     </div>
   );
 }

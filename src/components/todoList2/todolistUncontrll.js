@@ -52,7 +52,9 @@ export default function TodoListUncntl() {
       <div key={id}>
         <li className={getTodoStatusClass(status)}>
           <span className="serial-number">{serialNumber}</span>
-          <span className="text">{text}</span>
+          
+          {editing ? (<input defaultValue={text}
+          id={'input-todo--'+id} />) :(<span className="text">{text}</span>)}
 
           <div className="button-section">
             <button
@@ -98,12 +100,9 @@ export default function TodoListUncntl() {
     const todo = { ...currentValue[index] };
     if (todo.editing) {
       const inputTodoEle = document.getElementById("input-todo--" + id);
-
       todo.text = inputTodoEle.value;
     }
-
     todo.editing = !todo.editing;
-
     const newTodos = [...currentValue];
     newTodos[index] = todo;
     updateValue(newTodos);
