@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect} from "react";
 import "./todolistUncontroll.css";
 
 export default function TodoListUncntl() {
@@ -6,6 +6,14 @@ export default function TodoListUncntl() {
   const disableBtn = useRef();
   const [currentValue, updateValue] = useState([]);
   const [oldSerialNumber, updateSerialNumber] = useState(1);
+  
+  useEffect(() => {
+    //console.log('calls on once or first time when component render')
+    //console.log('addBtnRef', addBtnRef)
+    disableBtn.current.disabled = true;
+    currentRef.current.focus();
+  }, [])
+
   // const [oldStatus,newStatus] = useState("pending")
 
   function handleAddTodo() {
@@ -18,8 +26,10 @@ export default function TodoListUncntl() {
       editing: false,
     };
     const newTodos = JSON.parse(JSON.stringify(currentValue));
+    console.log("newTodos",newTodos)
     newTodos.push(todos);
     updateValue(newTodos);
+    console.log("updateValue",currentValue)
     currentRef.current.value = "";
     disableBtn.current.disabled = true;
     updateSerialNumber(oldSerialNumber + 1);
@@ -93,11 +103,13 @@ export default function TodoListUncntl() {
   }
 
   function handleEdit(event) {
+  
     let id = event.target.id;
     id = id.split("--")[1];
     const index = currentValue.findIndex((todo) => id === todo.id);
 
     const todo = { ...currentValue[index] };
+    console.log("todo ",todo)
     if (todo.editing) {
       const inputTodoEle = document.getElementById("input-todo--" + id);
       todo.text = inputTodoEle.value;
@@ -105,6 +117,7 @@ export default function TodoListUncntl() {
     todo.editing = !todo.editing;
     const newTodos = [...currentValue];
     newTodos[index] = todo;
+    console.log("newTodos ",newTodos)
     updateValue(newTodos);
   }
 

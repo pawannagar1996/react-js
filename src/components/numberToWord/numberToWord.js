@@ -66,7 +66,7 @@ function NumberToWord(event) {
       inputWord -= tenPlaceValue * 10;
     }
     //10,20,30,40,50,60,70,80,90
-  if (inputWord <= 99 && inputWord %10 == 0) {
+  if (inputWord <= 99 && inputWord %10 == 0 && inputWord!=0) {
       let index = inputWord / 10;
       numberToWordSave += tensMap[index - 1];
     }

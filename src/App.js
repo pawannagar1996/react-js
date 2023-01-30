@@ -1,4 +1,4 @@
-import NumberToWord from "./components/numberToWord/numberToWord";
+// import NumberToWord from "./components/numberToWord/numberToWord";
 import TodoListUncntl from "./components/todoList2/todolistUncontrll";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   <div>
    
     <TodoListUncntl/>
-    <NumberToWord/>
+    {/* <NumberToWord/> */}
   
   </div>
   );
