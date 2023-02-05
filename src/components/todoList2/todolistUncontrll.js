@@ -3,6 +3,7 @@ import "./todolistUncontroll.css";
 
 export default function TodoListUncntl() {
   const currentRef = useRef();
+ 
   const disableBtn = useRef();
   const [currentValue, updateValue] = useState([]);
   const [oldSerialNumber, updateSerialNumber] = useState(1);
@@ -12,6 +13,14 @@ export default function TodoListUncntl() {
     //console.log('addBtnRef', addBtnRef)
     disableBtn.current.disabled = true;
     currentRef.current.focus();
+   
+  }, [])
+  useEffect(() => {
+    //console.log('calls on once or first time when component render')
+    //console.log('addBtnRef', addBtnRef)
+    disableBtn.current.disabled = true;
+    currentRef.current.focus();
+   
   }, [])
 
   // const [oldStatus,newStatus] = useState("pending")
@@ -63,7 +72,7 @@ export default function TodoListUncntl() {
         <li className={getTodoStatusClass(status)}>
           <span className="serial-number">{serialNumber}</span>
           
-          {editing ? (<input defaultValue={text}
+          {editing ? (<input defaultValue={text} 
           id={'input-todo--'+id} />) :(<span className="text">{text}</span>)}
 
           <div className="button-section">
@@ -75,7 +84,7 @@ export default function TodoListUncntl() {
             >
               {editing ? "done edit" : "edit"}
             </button>
-            <button
+            {editing !== true  && (<button
               className="btn pending"
               id={"btn-done--" + id}
               disabled={status === "done"}
@@ -83,6 +92,7 @@ export default function TodoListUncntl() {
             >
               {status}
             </button>
+            )}
             <button className="btn delete">delete</button>
           </div>
         </li>
