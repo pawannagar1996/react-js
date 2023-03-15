@@ -1,0 +1,35 @@
+
+function TodoListComponent(props) {
+  const { todos } = props;
+  return (
+    <ul>
+    {
+      todos.map((todo) => {
+        const {id, text, status, editing} = todo;
+        return (
+          <li key={id} id={'li--'+id} className={getTodoStatusClass(status)}>
+            {editing ? (<input defaultValue={text}  id={'input-todo--'+id} />) :(<span>{text}</span>)}
+            {editing !== true  && (
+              <button
+                id={'btn-done--'+id}
+                onClick={handleMarkDone}
+                disabled={status === 'done'}>
+                  Mark done
+              </button>
+            )}
+            
+            <button
+              id={'btn-edit--'+id}
+              onClick={handleEdit} 
+              disabled={status === 'done'}>
+                {editing ? 'Edit done' : 'Edit'}
+            </button>
+          </li>
+        )
+      })
+    }
+  </ul>
+  )
+}
+
+export default TodoListComponent;
