@@ -1,24 +1,11 @@
-// import NumberToWord from "./components/numberToWord/numberToWord";
-// import TodoListUncntl from "./components/todoList2/todolistUncontrll";
-
-// import RupeeCheck from "./components/rupee/rupee";
-// import AddTodoComponent from "./components/todo compodent/addTodo";
-
-// import RupeeCheck from "./components/rupee/rupee";
-
-import TicTac from "./components/ticTac/ticTac";
+import TodoCompodents from "./components/staticTodoList/TodoCompodent.js";
 
 function App() {
+
+
   return (
   <div>
-{/* <RupeeCheck/> */}
-    {/* <TodoListUncntl/> */}
-    {/* <NumberToWord/> */}
-    {/* <AddTodoComponent/> */}
-    {/* <RupeeCheck/> */}
-    <TicTac/>
-    
-  
+    <TodoCompodents/>
   </div>
   );
 }

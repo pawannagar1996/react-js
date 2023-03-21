@@ -1,0 +1,9 @@
+.todo-cover{
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    background-color: #9746ff;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+}

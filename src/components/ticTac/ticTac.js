@@ -1,68 +1,40 @@
 
-export default function TicTac() {
+export default function TicTac(symbol,ticTacGame) {
 
 let ticTacGame = [
-["x","o",""],
-["x","o",""],
-["x","","o"]
+["o","x","x"],
+["o","o","o"],
+["","","x"]
 ]
 
-// winner o code
-if(ticTacGame[0][0]=="o" && ticTacGame[0][1]=="o" && ticTacGame[0][2]=="o"){
-    console.log("winner "+"o")
+//winner o code
+if(ticTacGame[0][0]==symbol && ticTacGame[0][1]==symbol && ticTacGame[0][2]==symbol){
+    console.log("winner "+symbol)
 }
-if(ticTacGame[1][0]=="o" && ticTacGame[1][1]=="o" && ticTacGame[1][2]=="o"){
-    console.log("winner "+"o")
+if(ticTacGame[1][0]==symbol && ticTacGame[1][1]==symbol && ticTacGame[1][2]==symbol){
+    console.log("winner "+symbol)
 }
-if(ticTacGame[2][0]=="o" && ticTacGame[2][1]=="o" && ticTacGame[2][2]=="o"){
-    console.log("winner "+"o")
-}
-
-if(ticTacGame[0][0]=="o" && ticTacGame[1][0]=="o" && ticTacGame[2][0]=="o"){
-    console.log("winner "+"o")
-}
-if(ticTacGame[0][1]=="o" && ticTacGame[1][1]=="o" && ticTacGame[2][1]=="o"){
-    console.log("winner "+"o")
-}
-if(ticTacGame[0][2]=="o" && ticTacGame[1][2]=="o" && ticTacGame[2][2]=="o"){
+if(ticTacGame[2][0]==symbol && ticTacGame[2][1]==symbol && ticTacGame[2][2]==symbol){
     console.log("winner "+"o")
 }
 
-if(ticTacGame[0][0]=="o" && ticTacGame[1][1]=="o" && ticTacGame[2][2]=="o"){
-    console.log("winner "+"o")
+if(ticTacGame[0][0]==symbol && ticTacGame[1][0]==symbol && ticTacGame[2][0]==symbol){
+    console.log("winner "+symbol)
 }
-if(ticTacGame[0][2]=="o" && ticTacGame[1][1]=="o" && ticTacGame[2][0]=="o"){
-    console.log("winner "+"o")
+if(ticTacGame[0][1]==symbol && ticTacGame[1][1]==symbol && ticTacGame[2][1]==symbol){
+    console.log("winner "+symbol)
 }
-
-
-// winner x code
-if(ticTacGame[0][0]=="x" && ticTacGame[0][1]=="x" && ticTacGame[0][2]=="x"){
-    console.log("winner "+"x")
-}
-if(ticTacGame[1][0]=="x" && ticTacGame[1][1]=="x" && ticTacGame[1][2]=="x"){
-    console.log("winner "+"x")
-}
-if(ticTacGame[2][0]=="x" && ticTacGame[2][1]=="x" && ticTacGame[2][2]=="x"){
-    console.log("winner "+"x")
+if(ticTacGame[0][2]==symbol && ticTacGame[1][2]==symbol && ticTacGame[2][2]==symbol){
+    console.log("winner "+symbol)
 }
 
-if(ticTacGame[0][0]=="x" && ticTacGame[1][0]=="x" && ticTacGame[2][0]=="x"){
-    console.log("winner "+"x")
+if(ticTacGame[0][0]==symbol && ticTacGame[1][1]==symbol && ticTacGame[2][2]==symbol){
+    console.log("winner "+symbol)
 }
-if(ticTacGame[0][1]=="x" && ticTacGame[1][1]=="x" && ticTacGame[2][1]=="x"){
-    console.log("winner "+"x")
-}
-if(ticTacGame[0][2]=="x" && ticTacGame[1][2]=="x" && ticTacGame[2][2]=="x"){
-    console.log("winner "+"x")
+if(ticTacGame[0][2]==symbol && ticTacGame[1][1]==symbol && ticTacGame[2][0]==symbol){
+    console.log("winner "+symbol)
 }
 
-if(ticTacGame[0][0]=="x" && ticTacGame[1][1]=="x" && ticTacGame[2][2]=="x"){
-    console.log("winner "+"x")
-}
-if(ticTacGame[0][2]=="x" && ticTacGame[1][1]=="x" && ticTacGame[2][0]=="x"){
-    console.log("winner "+"x")
-}
 
 // let x = ""
 // let o = "3"
@@ -75,9 +47,5 @@ if(ticTacGame[0][2]=="x" && ticTacGame[1][1]=="x" && ticTacGame[2][0]=="x"){
    
 
     
-    
 
-
-return(<div></div>
-)
 }
