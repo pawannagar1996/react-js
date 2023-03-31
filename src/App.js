@@ -1,11 +1,15 @@
-import TodoCompodents from "./components/staticTodoList/TodoCompodent.js";
+import MainPopUp from "./components/popUp/MainpopUp";
+
+
+
+
 
 function App() {
 
 
   return (
   <div>
-    <TodoCompodents/>
+ <MainPopUp/>
   </div>
   );
 }
